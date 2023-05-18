@@ -1,5 +1,5 @@
 import { fetchDetailsMovie } from "api";
-import { useParams, useLocation, NavLink} from "react-router-dom";
+import { useParams, useLocation, NavLink, Link} from "react-router-dom";
 import { useEffect, useState,useRef } from "react";
 import { Loading } from "components/Loading";
 import { Suspense } from "react";
@@ -56,6 +56,11 @@ export const AboutFilm = ()=> {
                             <p>{(infoMovie.genres)&&(infoMovie.genres.map(genre=> genre.name).join(" "))}</p>
                         </div>
                     </div>
+                    <ul>
+                        <li>
+                            <Link to="cast" state={location.state}>Cast</Link>
+                        </li>
+                    </ul>
                 </div>
             </Suspense>
         )

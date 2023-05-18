@@ -13,3 +13,8 @@ export const fetchDetailsMovie = async(id, controller)=> {
     return data ;
 }
 
+export const fetchCastMovie = async(id, controller)=> {
+    const {data} = await axios.get(`/3/movie/${id}/credits?api_key=${KEY_API}`, {signal: controller.signal});
+    return data ;
+}
+

@@ -1,11 +1,17 @@
-import { NavLink } from "react-router-dom";
+import { useRef } from "react";
+import { NavLink, useLocation  } from "react-router-dom";
 import { Outlet } from "react-router-dom";
+import { HomeLink } from "./SharedLayout.styled";
 
 export const SharedLayout = () => {
+    const location = useLocation();
+    const backLinkLocationRef = useRef(location);
+    console.log(location.pathname)
+
     return (
         <div>
-            <NavLink to="/" end>Home</NavLink>
-            <NavLink to="/movies" end>Movies</NavLink>
+            <HomeLink to="/">Home</HomeLink>
+            <HomeLink to="/movies">Movies</HomeLink>
             <Outlet/>
         </div>
     );
