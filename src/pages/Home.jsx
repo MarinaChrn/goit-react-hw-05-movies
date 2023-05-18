@@ -1,5 +1,5 @@
 
-import fetchTrendingMovies from "api";
+import {fetchTrendingMovies} from "api";
 import { ListFilms } from "components/ListFilms";
 import { useEffect } from "react";
 
@@ -19,7 +19,7 @@ export const Home = () => {
                 const fetchedSearch = await fetchTrendingMovies(controller)
                 setTrend([...fetchedSearch.results])
             } catch(error) {
-                console.log(error)
+                setError(error)
             } finally {
                 setIsLoading(false);
             }
