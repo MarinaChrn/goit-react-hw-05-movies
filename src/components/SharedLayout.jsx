@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { NavLink, useLocation  } from "react-router-dom";
+import { useLocation  } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { HomeLink } from "./SharedLayout.styled";
 

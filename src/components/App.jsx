@@ -1,5 +1,5 @@
-import { Loading } from "./Loading";
-import { Suspense, lazy } from "react";
+
+import {lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 const Home = lazy(()=> import("../pages/Home"));
 const CastFilm = lazy(()=> import("./CastFilm"));
@@ -9,7 +9,6 @@ const Movies = lazy(()=> import("../pages/Movies"));
 
 export const App = () => {
   return (
-    <Suspense fallback={<Loading />}>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route path="/" element={<Home />}/>
@@ -20,7 +19,5 @@ export const App = () => {
           </Route>
         </Route>
       </Routes>
-    </Suspense>
-    
   );
 };
