@@ -40,7 +40,7 @@ export const AboutFilm = ()=> {
             <p>Loading...</p>
         )
     }
-    if (isLoading!==true&&infoMovie.length!==0) {
+    if (isLoading!==true&&infoMovie.length!==0&&!error) {
         return (
             <Suspense fallback={<Loading />}>
                 <div>

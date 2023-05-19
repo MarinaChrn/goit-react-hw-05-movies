@@ -19,7 +19,6 @@ export const Home = () => {
                 setTrend([...fetchedSearch.results])
             } catch(errors) {
                 setError(errors)
-                console.log(error)
             } finally {
                 setIsLoading(false);
             }
@@ -33,6 +32,6 @@ export const Home = () => {
         
         (<main>
             {(isLoading)&&(<p>Loading...</p>)}
-            {(!isLoading) && (<ListFilms arrayFilms={trend}/>)}
+            {(!isLoading) && (!error) && (<ListFilms arrayFilms={trend}/>)}
         </main>)
     )}
