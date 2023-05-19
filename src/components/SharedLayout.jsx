@@ -1,11 +1,11 @@
-import { useRef } from "react";
+// import { useRef } from "react";
 import { useLocation  } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { HomeLink } from "./SharedLayout.styled";
 
 export const SharedLayout = () => {
     const location = useLocation();
-    const backLinkLocationRef = useRef(location);
+    // const backLinkLocationRef = useRef(location);
     console.log(location.pathname)
 
     return (
