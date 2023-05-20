@@ -23,3 +23,7 @@ export const fetchSearchByValue = async(value, controller)=> {
     return data ;
 }
 
+export const fetchCastOfFilm = async(value, controller)=> {
+    const {data} = await axios.get(`/movie/${value}/credits?api_key=${KEY_API}&page=1&per_page=20`, {signal: controller.signal});
+    return data.cast ;
+}
