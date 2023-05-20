@@ -1,4 +1,4 @@
-export const CastFilm = ()=>{
+const CastFilm = ()=>{
     return (
         <section>
             <p>Cast</p>
@@ -6,3 +6,5 @@ export const CastFilm = ()=>{
         </section>
     )
 }
+
+export default CastFilm;

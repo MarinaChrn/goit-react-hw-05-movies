@@ -1,13 +1,13 @@
 
 import {fetchTrendingMovies} from "api";
-import { ListFilms } from "components/ListFilms";
+import ListFilms from "components/ListFilms";
 import { useEffect } from "react";
-
 import { useState } from "react";
-export const Home = () => {
+
+const Home = () => {
     const [trend, setTrend] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
+    const [,setError] = useState(null);
 
     useEffect(()=>{
         const controller = new AbortController();
@@ -19,6 +19,7 @@ export const Home = () => {
                 setTrend([...fetchedSearch.results])
             } catch(errors) {
                 setError(errors)
+                
             } finally {
                 setIsLoading(false);
             }
@@ -30,8 +31,12 @@ export const Home = () => {
 
     return (
         
-        (<main>
-            {(isLoading)&&(<p>Loading...</p>)}
-            {(!isLoading) && (!error) && (<ListFilms arrayFilms={trend}/>)}
-        </main>)
+        (
+            <main>
+                {(isLoading)&&(<p>Loading...</p>)}
+                {(!isLoading) && (<ListFilms arrayFilms={trend}/>)}
+            </main>
+        )
     )}
+
+export default Home;

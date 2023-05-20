@@ -6,10 +6,22 @@ export const HomeLink = styled(NavLink)`
     color:black;
     font-size: 26px;
     font-weight: 500;
-    &:hover {
+    &:hover, &:focus {
         color: red;
     }
     &.active {
         color: red;
     }
+`
+
+export const Layout = styled.header`
+    display: flex;
+    margin-top:20px;
+    margin-bottom:20px;
+    gap: 30px;
+`
+
+export const Line = styled.hr`
+    color: #ababab;
+    margin-left: -80px;
 `
