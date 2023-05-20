@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/909.753d5323.chunk.js","mappings":"iMAAaA,EAAW,WACpB,OACI,gCACI,iCACA,oCAGX,C","sources":["components/CastFilm.jsx"],"sourcesContent":["export const CastFilm = ()=>{\n    return (\n        <section>\n            <p>Cast</p>\n            <h1>Hello</h1>\n        </section>\n    )\n}"],"names":["CastFilm"],"sourceRoot":""}
