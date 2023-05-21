@@ -1,6 +1,7 @@
 import { fetchCastOfFilm } from "api";
+import { StyledNavLinks } from "pages/AboutFilm.styled";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import {useParams } from "react-router-dom";
 import { StyledSection } from "./CastFilm.styled";
 import { CastFilmCard } from "./CastFilmCard";
 
@@ -9,7 +10,7 @@ const CastFilm = () =>{
     const [isLoading, setIsLoading] = useState(false);
     const [, setError] = useState(null);
     const {moviesId} = useParams();
-
+    const pathname = `/movies/${moviesId}`
     useEffect(()=> {
         const controller = new AbortController();
         async function fetchSearch () {    
@@ -31,12 +32,14 @@ const CastFilm = () =>{
         })
     },[moviesId])
 
-    console.log(castMovie)
-
     return (
         <StyledSection>
             {(isLoading)&&(<p>Loading...</p>)}
-            {(castMovie.length!==0)&&(!isLoading)&&(castMovie.map( el => <CastFilmCard actor={el} key={el.id}/>))}
+            {(castMovie.length!==0)&&(!isLoading)&&(
+                <>
+                    {castMovie.map( el =><CastFilmCard actor={el} key={el.id}/>)}
+                    <StyledNavLinks to={pathname}>Close</StyledNavLinks>
+                </>)}
         </StyledSection>
     )
 }

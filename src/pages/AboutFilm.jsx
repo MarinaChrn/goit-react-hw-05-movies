@@ -4,7 +4,7 @@ import { useEffect, useState,useRef} from "react";
 import { Loading } from "components/Loading";
 import { Suspense } from "react";
 import {FiArrowLeft} from "react-icons/fi";
-import {StyledAboutFilm, StyledImg, StyledLayout, StyledLink} from "./AboutFilm.styled.js";
+import {ListStyledLinks, StyledAboutFilm, StyledImg, StyledLayout, StyledLink, StyledLinks, StyledNavLinks} from "./AboutFilm.styled.js";
 import { Line } from "components/SharedLayout.styled";
 
 const AboutFilm = ()=> {
@@ -62,11 +62,15 @@ const AboutFilm = ()=> {
                     </StyledLayout>
                     <Line/>
                     <h2>Additional information</h2>
-                    <ul>
-                        <li>
-                            <Link to="cast" state={location.state}>Cast</Link>
-                        </li>
-                    </ul>
+                    <ListStyledLinks>
+                        <StyledLinks>
+                            <StyledNavLinks to="cast">Cast</StyledNavLinks>
+                        </StyledLinks>
+                        <StyledLinks>
+                            <StyledNavLinks to="reviews">Reviews</StyledNavLinks>
+                        </StyledLinks>
+                    </ListStyledLinks>
+                    <Line/>
                 </div>
                 <Outlet/>
             </Suspense>

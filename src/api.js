@@ -27,3 +27,8 @@ export const fetchCastOfFilm = async(value, controller)=> {
     const {data} = await axios.get(`/movie/${value}/credits?api_key=${KEY_API}&page=1&per_page=20`, {signal: controller.signal});
     return data.cast ;
 }
+
+export const fetchReviewsOfFilm = async(value, controller)=> {
+    const {data} = await axios.get(`/movie/${value}/reviews?api_key=${KEY_API}&page=1&per_page=10`, {signal: controller.signal});
+    return data.results ;
+}

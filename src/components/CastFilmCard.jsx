@@ -1,4 +1,5 @@
 import { AboutActor, LayoutActor, StyledImgActor } from "./CastFilmCard.styled"
+import PropTypes from "prop-types";
 
 export const CastFilmCard = ({actor}) => {
     return (
@@ -10,4 +11,8 @@ export const CastFilmCard = ({actor}) => {
             </AboutActor>
         </LayoutActor>
     )
+}
+
+CastFilmCard.propTypes = {
+    actor: PropTypes.object.isRequired
 }
