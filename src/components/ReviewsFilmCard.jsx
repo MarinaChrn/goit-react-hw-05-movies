@@ -2,7 +2,7 @@ import { NameOfUser, StyledCreatedAt, StyledHeadReview, StyledHeadReviewAbout, S
 import PropTypes from "prop-types";
 
 export const ReviewsFilmCard = ({review}) => {
-    const imgPath = (review.author_details.avatar_path.includes("https"))? review.author_details.avatar_path.slice(1)
+    const imgPath = (review.author_details.avatar_path)&&(review.author_details.avatar_path.includes("https"))? review.author_details.avatar_path.slice(1)
     : `https://image.tmdb.org/t/p/original${review.author_details.avatar_path}`
     return (
         <StyledReview>  
