@@ -1,5 +1,5 @@
 import { fetchDetailsMovie } from "api";
-import { useParams, useLocation, Link, Outlet, } from "react-router-dom";
+import { useParams, useLocation, Outlet, } from "react-router-dom";
 import { useEffect, useState,useRef} from "react";
 import { Loading } from "components/Loading";
 import { Suspense } from "react";
